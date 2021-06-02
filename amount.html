@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <h1>palkin</h1>
+</head>
+<body>
+    <script>
+
+        function currency(amount)
+        {
+            let notes = [ 2000, 500, 200, 100 ];
+            let counter = Array(4).fill(0);
+            
+            for (let i = 0; i < 9; i++) {
+                if (amount >= notes[i]) {
+                    counter[i] = Math.floor(amount / notes[i]);
+                    amount = amount - counter[i] * notes[i];
+                }
+            }
+            
+    
+            for (let i = 0; i < 4; i++) {
+                if (counter[i] != 0) {
+                    document.write(notes[i] + " : "
+                        + counter[i] + "<br/>");
+                }
+            }
+        }
+        
+        let amount = 6000;
+        currency(amount);
+        
+    </script>
+    
+    
+</body>
+</html>
