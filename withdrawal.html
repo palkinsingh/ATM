@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>Atm cash withdrawal system</title>
+            <script type="text/javascript" 
+                src="var.js">
+            </script>
         
     </head>
     
@@ -12,6 +15,7 @@
             <div class="middle-box">
                 
                <h3>Enter Ammount<br>
+               
                 <input type="number" id="a1"><h5><span>In rupees</span></h5></h3>
                 <br>
                 
@@ -19,25 +23,44 @@
                     <button type="button" onclick="withdraw()" class="WITHDRAW">WITHDRAW</button>
                         <button type="button" onclick="home()" class="cash-h-btn">Back To Home</button>
                         <script>
+                        </script>
+                        <script>
                             function home(){
                                 document.location.href="home.html";
                             }
+                            
                             </script>
-                    <script>
+                 <script>
+                     
+                     
+                     localStorage.setItem('str',a1);
                         
-                        
+                       
+                    
                         function withdraw(){
-                             str = document.getElementById("a1").value;
-                             alert("WITHDRAW "+str + "RS");
+
+                            str = document.getElementById("a1").value;
+                            const varBalance=localStorage.getItem('balance')
+                            console.log(parseInt(str));
+                            console.log(parseInt(varBalance));
+                            if(parseInt(str) > parseInt(varBalance) || parseInt(str) <= 0){
+                                alert("Insufficient funds"+ "Your Balance is"+varBalance);
+                                return false;
+                            }
+                            else{
+                                console.log(withdraw);
+                               alert("WITHDRAW "+str + "RS");
                             document.location.href="amount.html";
+                            newBalance=varBalance-str;
                             
                             
+                            }
                             function currency(amount)
         {
-            let notes = [ 2000, 500, 200, 100 ];
-            let counter = Array(4).fill(0);
+            let notes = [ 2000, 500, 200, 100,50 ];
+            let counter = Array(5).fill(0);
             
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 if (amount >= notes[i]) {
                     counter[i] = Math.floor(amount / notes[i]);
                     amount = amount - counter[i] * notes[i];
@@ -45,7 +68,7 @@
             }
             
     
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 if (counter[i] != 0) {
                     document.write(notes[i] + " : "
                         + counter[i] + "<br/>");
@@ -55,8 +78,9 @@
         
         let amount = str;
         currency(amount);
- 
+        alert("Your New Balance is "+newBalance +" rs");
                         }
+                       
                         </script>
                         
                         

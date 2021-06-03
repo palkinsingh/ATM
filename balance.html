@@ -1,6 +1,11 @@
 <html>
     <head>
+        
         <title>Atm cash withdrawal system</title>
+            <script type="text/javascript" 
+                src="var.js">
+            </script>
+        
         
     </head>
     <body>
@@ -19,10 +24,25 @@
                                 document.location.href="home.html";
                             }
                             </script>
+                            
                  <script>
+                    // const variable=require('./var.js')
+                      //console.log(variable.varBalance);
+                      const varBalance=localStorage.getItem('balance');
+                     // const varBalance=localStorage.getItem('str');
+                     
                      function myBalance(){
-                         document.getElementById("balance").defaultValue="1125000";
+                        document.getElementById("balance").defaultValue=varBalance;
+                       //  if(parseInt(str) > parseInt(varBalance) || parseInt(str) <= 0){
+                         //       alert("Insufficient funds");
+                           //     return false;
+                            //}
+                            //else {
+                              //  newBalance=varBalance-str;
+                                //localStorage.setItem('varBalance',newBalance);
+                               // console.log(varBalance);
                      }
+                     
                  </script>
 
         

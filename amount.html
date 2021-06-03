@@ -15,8 +15,8 @@
 
         function currency(amount)
         {
-            let notes = [ 2000, 500, 200, 100 ];
-            let counter = Array(4).fill(0);
+            let notes = [ 2000, 500, 200, 100, 50 ];
+            let counter = Array(5).fill(0);
             
             for (let i = 0; i < 9; i++) {
                 if (amount >= notes[i]) {
@@ -26,7 +26,7 @@
             }
             
     
-            for (let i = 0; i < 4; i++) {
+            for (let i = 0; i < 5; i++) {
                 if (counter[i] != 0) {
                     document.write(notes[i] + " : "
                         + counter[i] + "<br/>");
