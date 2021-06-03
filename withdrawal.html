@@ -47,6 +47,10 @@
                                 alert("Insufficient funds"+ "Your Balance is"+varBalance);
                                 return false;
                             }
+                            else if(parseInt(str) % 5!=0 ){
+                                alert("Enter Amount In Multiples Only");
+                                return false;
+                            }
                             else{
                                 console.log(withdraw);
                                alert("WITHDRAW "+str + "RS");
