@@ -12,19 +12,54 @@
             <div class="middle-box">
                 
                <h3>Enter Ammount<br>
-                <input type="text" id="a1"><h5><span>In rupees</span></h5></h3>
+                <input type="number" id="a1"><h5><span>In rupees</span></h5></h3>
                 <br>
+                
                 <div class="bottom-box">
-                    <button type="button" onclick="withdraw()" class="">WITHDRAW</button>
+                    <button type="button" onclick="withdraw()" class="WITHDRAW">WITHDRAW</button>
+                        <button type="button" onclick="home()" class="cash-h-btn">Back To Home</button>
+                        <script>
+                            function home(){
+                                document.location.href="home.html";
+                            }
+                            </script>
                     <script>
+                        
+                        
                         function withdraw(){
-                            var str = document.getElementById("a1").value;
+                             str = document.getElementById("a1").value;
                              alert("WITHDRAW "+str + "RS");
                             document.location.href="amount.html";
-                            localStorage.setItem("text",str);
-                            return false;
+                            
+                            
+                            function currency(amount)
+        {
+            let notes = [ 2000, 500, 200, 100 ];
+            let counter = Array(4).fill(0);
+            
+            for (let i = 0; i < 4; i++) {
+                if (amount >= notes[i]) {
+                    counter[i] = Math.floor(amount / notes[i]);
+                    amount = amount - counter[i] * notes[i];
+                }
+            }
+            
+    
+            for (let i = 0; i < 4; i++) {
+                if (counter[i] != 0) {
+                    document.write(notes[i] + " : "
+                        + counter[i] + "<br/>");
+                }
+            }
+        }
+        
+        let amount = str;
+        currency(amount);
+ 
                         }
                         </script>
+                        
+                        
             </div>
         
     </body>
@@ -107,5 +142,14 @@ font-weight: normal;
     bottom:18px;
     position: relative;
 }
-
+.WITHDRAW,.cash-h-btn
+{
+    color:#fff;
+    margin: 5px 30px;
+    height:30px;
+    width:150px;
+    background-color: #9100fd;
+    border: none;
+    cursor:pointer;
+}
 </style>

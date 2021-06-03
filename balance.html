@@ -10,9 +10,15 @@
             </div>
             <div class="middle-box">
                 <h3>BALANCE<br>
-                 <input type="number" id="balance"value="IN RUPEES"><h5><span>In rupees</span></h5></h3>
+                 <input type="text" id="balance"value=""><h5><span>In rupees</span></h5></h3>
                  <br>
-                 <button type="button" onclick="myBalance()">Get Balance</button>
+                 <button type="button" onclick="myBalance()" class="cash-bh-btn">Get Balance</button>
+                 <button type="button" onclick="home()" class="cash-h-btn">Back To Home</button>
+                        <script>
+                            function home(){
+                                document.location.href="home.html";
+                            }
+                            </script>
                  <script>
                      function myBalance(){
                          document.getElementById("balance").defaultValue="1125000";
@@ -100,5 +106,14 @@ font-weight: normal;
     bottom:18px;
     position: relative;
 }
-
+.cash-h-btn,.cash-bh-btn
+{
+    color:#fff;
+    margin: 5px 30px;
+    height:30px;
+    width:150px;
+    background-color: #9100fd;
+    border: none;
+    cursor:pointer;
+}
 </style>

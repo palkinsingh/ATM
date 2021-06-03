@@ -29,6 +29,9 @@ switch(path){
                 case '/amount.html':
                 renderHTML('./amount.html',response);
                 break;
+                case '/home.html':
+                    renderHTML('./home.html',response);
+                    break;
             default:
             response.writeHead(404);
             response.write('route Not Defined');
